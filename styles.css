@@ -1,12 +1,18 @@
 body, html{
   height:100vh;
+  width:100vw;
+}
+.dancefloor{
+  height: 85vh;
+  width: 90vw;
 }
 body{
   margin: 0px;
-  background-color:#444;
+  /* background-color:#444; */
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dc768f4d-6e14-49e4-9ec0-71ee58e9005c/d5mh161-f875e416-9f31-46f4-9e7a-cc5c5791029e.jpg/v1/fill/w_1192,h_670,q_70,strp/space_background_by_pokemon5916_d5mh161-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZGM3NjhmNGQtNmUxNC00OWU0LTllYzAtNzFlZTU4ZTkwMDVjXC9kNW1oMTYxLWY4NzVlNDE2LTlmMzEtNDZmNC05ZTdhLWNjNWM1NzkxMDI5ZS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.v9GHKhc8k0ubTJQ9nhAejrv75Axfl1hKA4tcOp3dqCA");
   font-size: 18px;
-/*  background-size: cover;
-  background-repeat: no-repeat;*/
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -23,6 +29,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
+  transform: rotate(0deg);
   position:absolute;
   width: 50px;
   height: 50px;

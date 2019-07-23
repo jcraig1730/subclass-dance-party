@@ -1,12 +1,20 @@
 var makeShakyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps)
-  this.$node.css("background-image", 'url("https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png")'); 
+  this.$node.css("background-image", 'url("https://www.pinclipart.com/picdir/big/52-522354_download-bart-simpson-png-and-clipart-images-bulbasaur.png")');
+  this.$node.css("border", '4px solid #FF00')
 }
 
 makeShakyDancer.prototype = Object.create(makeDancer.prototype);
 makeShakyDancer.prototype.constructor = makeShakyDancer;
 
 makeShakyDancer.prototype.step = function(timeBetweenSteps) {
+  if (this.left > 896) {
+    this.left = Math.random() * 896;
+  }
+  if (this.isRotating) {
+    this.rotation += 20;
+    this.$node.css(`transform`, `rotate(${this.rotation}deg)`)
+  }
   setTimeout(()=> {
     this.left += 10;
     this.setPosition();
@@ -26,5 +34,5 @@ makeShakyDancer.prototype.step = function(timeBetweenSteps) {
     this.setPosition();
   }, 400);
   setTimeout(() => { this.step(timeBetweenSteps) }, timeBetweenSteps);
-  
+
 }
