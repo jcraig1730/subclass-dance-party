@@ -1,6 +1,7 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+  console.log('blinky: ' + this);
   makeDancer.call(this, top, left, timeBetweenSteps);
-
+  this.$node.css("background-image", 'url("https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png")');
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 

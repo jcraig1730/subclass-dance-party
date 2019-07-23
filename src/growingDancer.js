@@ -2,8 +2,7 @@ var makeGrowingDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps)
   this.height = 40;
   this.width = 40;
-  // this.$node.css("width", "10px solid greenyellow");
-
+  this.$node.css("background-image", 'url("https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png")';
 }
 
 makeGrowingDancer.prototype = Object.create(makeDancer.prototype);
