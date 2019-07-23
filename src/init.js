@@ -32,19 +32,26 @@ $(document).ready(function() {
   });
 
   $('.lineupButton').on('click', function(event) {
-  // get all dancers in the dancers array
-    // align their left with the body left
+    var spacing = $('.dancefloor').width()/(window.dancers.length+1);
+    var nextSpace = 0;
     window.dancers.forEach(dancer => {
-      dancer.left = 0;
+      console.log(nextSpace)
+      nextSpace += spacing;
+      $(dancer).animate({top: $(".dancefloor").height()/2, left: nextSpace}, 500);
     })
   })
 
-  $('.dancefloor').on('click', function(event) {
-    for (var i = 0; i < window.dancers.length; i++) {
-      window.dancers[i].top = $(".dancefloor").height() * Math.random() + 20;
-      window.dancers[i].left = $(".dancefloor").width() * Math.random();
-    }
+  $('.spinButton').on('click', function() {
+    window.dancers.forEach(dancer => dancer.isRotating = true);
   })
+
+  // $('body').on('click', '.dancefloor', function(event) {
+  //   window.dancers.forEach(dancer => {
+  //     var randomTop = $(".dancefloor").height() * Math.random() + 20;
+  //     var randomLeft = $(".dancefloor").width() * Math.random();
+  //     $(dancer).animate({top: randomTop, left: randomLeft}, 500);
+  //   })
+  // })
 
 });
 

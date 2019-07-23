@@ -1,15 +1,14 @@
 var makeJumpyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps)
   this.$node.css("background-image", 'url("http://www.sclance.com/backgrounds/charmander-transparent-background/charmander-transparent-background_521639.png")');
+
+  this.type = 'jumpy';
 }
 
 makeJumpyDancer.prototype = Object.create(makeDancer.prototype);
 makeJumpyDancer.prototype.constructor = makeJumpyDancer;
 
 makeJumpyDancer.prototype.step = function(timeBetweenSteps) {
-  if (this.top > 664) {
-    this.top = Math.random() * 664;
-  }
   if (this.isRotating) {
     this.rotation += 20;
     this.$node.css(`transform`, `rotate(${this.rotation}deg)`)

@@ -1,5 +1,6 @@
 var makeGrowingDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps)
+  makeDancer.call(this, top, left, timeBetweenSteps);
+  this.type = 'growy';
   this.height = 40;
   this.width = 40;
   this.$node.css("background-image", 'url("https://www.seekpng.com/png/full/147-1475004_squirtle-transparent-cute-squirtle-transparent-background.png")');
