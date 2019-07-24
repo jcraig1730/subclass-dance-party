@@ -10,10 +10,7 @@ makeGrowingDancer.prototype = Object.create(makeDancer.prototype);
 makeGrowingDancer.prototype.constructor = makeGrowingDancer;
 
 makeGrowingDancer.prototype.step = function(timeBetweenSteps) {
-  if (this.isRotating) {
-    this.rotation += 20;
-    this.$node.css(`transform`, `rotate(${this.rotation}deg)`)
-  }
+  makeDancer.prototype.step.call(this, timeBetweenSteps);
   setTimeout(()=> {
     this.width = 50;
     this.height = 50;
@@ -34,7 +31,6 @@ makeGrowingDancer.prototype.step = function(timeBetweenSteps) {
     this.height = 40;
     this.setPosition();
   }, 400);
-  setTimeout(() => { this.step(timeBetweenSteps) }, timeBetweenSteps);
 }
 
 makeGrowingDancer.prototype.setPosition = function() {

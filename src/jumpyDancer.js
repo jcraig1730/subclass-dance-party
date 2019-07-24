@@ -9,10 +9,7 @@ makeJumpyDancer.prototype = Object.create(makeDancer.prototype);
 makeJumpyDancer.prototype.constructor = makeJumpyDancer;
 
 makeJumpyDancer.prototype.step = function(timeBetweenSteps) {
-  if (this.isRotating) {
-    this.rotation += 20;
-    this.$node.css(`transform`, `rotate(${this.rotation}deg)`)
-  }
+  makeDancer.prototype.step.call(this, timeBetweenSteps);
   setTimeout(()=> {
     this.top += 10;
     this.setPosition();
@@ -29,8 +26,5 @@ makeJumpyDancer.prototype.step = function(timeBetweenSteps) {
     this.top -= 10;
     this.setPosition();
   }, 400);
-  setTimeout(() => { this.step(timeBetweenSteps) }, timeBetweenSteps);
-
-  // this.$node.css("border", "10px solid pink");
 
 }

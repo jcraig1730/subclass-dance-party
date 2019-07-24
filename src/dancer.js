@@ -26,10 +26,6 @@ var makeDancer = function(top, left, timeBetweenSteps) {
       this.$node.css("height", "80px");
     }, 500);
   })
-
-  // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
-  // this one sets the position to some random default point within the body
-
   this.step(timeBetweenSteps);
   this.top = top;
   this.rotation = 0;
@@ -43,13 +39,8 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function(timeBetweenSteps) {
-  // the basic dancer doesn't do anything interesting at all on each step,
-  // it just schedules the next step
-
-
   if (this.isRotating) {
-    this.rotation += 20;
-    this.$node.css(`transform`, `rotate(${this.rotation}deg)`)
+    $(this.$node).addClass("spin");
   }
   this.setPosition();
   setTimeout(() => { this.step(timeBetweenSteps) }, timeBetweenSteps);
@@ -67,23 +58,9 @@ makeDancer.prototype.checkCollisions = function() {
 }
 
 makeDancer.prototype.setPosition = function() {
-  // Use css top and left properties to position our <span> tag
-  // where it belongs on the page. See http://api.jquery.com/css/
-  //
-  // var topPercent = this.top/946 + '%';
-  // var leftPercent = this.left/408 + '%';
   var styleSettings = {
     top: this.top,
     left: this.left
   };
-
   this.$node.css(styleSettings);
-  // this.$node.css("top", this.top);
-  // this.$node.css("left", this.left);
-  // console.log(this.$node.css("top"));
-
 };
-
-// var a = new makeDancer(0, 0, 1000);
-
-// console.log(a)
